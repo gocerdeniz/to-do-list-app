@@ -29,14 +29,14 @@
 let button = document.getElementById("enter");
 let userInput = document.getElementById("userInput");
 let ul = document.querySelector("ul");
-
+let delButton = document.getElementsByClassName("sil-buton");
 
 function inputLength() {
     return userInput.value.length;
 }
 
 function getEventTarget(e){
-    e = e || window.event;sd
+    e = e || window.event;
     return e.target || e.srcElement;
 }   
 
@@ -48,6 +48,11 @@ function createListElement() {
     
 }
 
+
+function delEv() {
+    let target = getEventTarget();
+    target.classList.add("delete");
+}
 
 
 
@@ -72,4 +77,5 @@ function addListAfterKeypress(event) {
 
 button.addEventListener("click", addListAfterClick);
 userInput.addEventListener("keypress", addListAfterKeypress);
-ul.addEventListener("click", setToDone)
+ul.addEventListener("click", setToDone);
+delButton.addEventListener("click",delEv);
