@@ -57,9 +57,6 @@ function delEv() {
 
 
 function setToDone() {
-    // console.log("çalışıyo mu aq");
-    // let ulChild = ul.children
-    // ulChild.classList.add("done");
 
     let target = getEventTarget();
     target.classList.toggle("done");
